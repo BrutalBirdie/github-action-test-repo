@@ -3,7 +3,7 @@ on:
     branches:
       - main
 jobs:
-  deploy:
+  deploy-to-cloudron-app:
     runs-on: ubuntu-latest
     environment: my.cloudron.dev
     steps:
