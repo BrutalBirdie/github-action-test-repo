@@ -5,6 +5,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: my.cloudron.dev
     steps:
       - name: Cloudron Push to App
         uses: cloudron-io/cloudron-push-to-app@latest
