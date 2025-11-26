@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
+      - name: Install composer dependencies
+        uses: php-actions/composer@v6
+        with:
+          command: composer install
       - name: Cloudron Push to App
         uses: cloudron-io/cloudron-push-to-app@latest
         with:
