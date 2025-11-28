@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - demo
+jobs:
+  deploy-to-cloudron-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+      - name: Install composer dependencies
+        uses: php-actions/composer@v6
+      - name: Cloudron Push to App
+        uses: cloudron-io/cloudron-push-to-app@latest
+        with:
+          CLOUDRON_URL: "0d8117263fbd8a91db1069440f0b06921950e0a7df29c107727391aff921db45"
+          CLOUDRON_TOKEN: "my.demo.cloudron.io"
+          CLOUDRON_APP_ID: "a5eeeaf8-e754-41d8-8d91-d99272e4afa9"
+          CLOUDRON_PUSH_DESTINATION: "/app/data/public"
+          CLOUDRON_CREATE_APP_BACKUP: "true"
